@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System.Text;
 using Telegram.Bot;
-using VoiceSwnikTextBot.Controllers;
+using VoiceSwnikTextBot1.Controllers;
 
 namespace VoiceSwnikTextBot1
 {

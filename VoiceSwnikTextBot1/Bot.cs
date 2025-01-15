@@ -9,7 +9,7 @@ using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using VoiceSwnikTextBot.Controllers;
+using VoiceSwnikTextBot1.Controllers;
 
 namespace VoiceSwnikTextBot1
 {
@@ -72,7 +72,7 @@ namespace VoiceSwnikTextBot1
                         await _voiceMessageController.Handle(update.Message, cancellationToken);
                         return;
                     case MessageType.Text:
-                        //await _telegramClient.SendTextMessageAsync(update.Message.From.Id, $"Длина сообщения: {update.Message.Text.Length} знаков", cancellationToken: cancellationToken);
+                        await _telegramClient.SendTextMessageAsync(update.Message.From.Id, $"Длина сообщения: {update.Message.Text.Length} знаков", cancellationToken: cancellationToken);
                         await _textMessageController.Handle(update.Message, cancellationToken);
                         return;
                     default: // unsupported message

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using System.Text;
 using Telegram.Bot;
 using VoiceSwnikTextBot1.Controllers;
+using VoiceSwnikTextBot1.Services;
 
 namespace VoiceSwnikTextBot1
 {
@@ -38,6 +39,11 @@ namespace VoiceSwnikTextBot1
             services.AddSingleton<ITelegramBotClient>(provider => new TelegramBotClient("8096839111:AAH44MfT6dxoZ7kvLUH3VrdFbJVPaJx2NOk"));
             // Регистрируем постоянно активный сервис бота
             services.AddHostedService<Bot>();
+            // ..
+            services.AddSingleton<IProcessor, Processor>();
+            UserSetting userSetting = new UserSetting();
+            services.AddSingleton(userSetting);
+            // ..
         }
     }
 }
